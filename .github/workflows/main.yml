@@ -1,4 +1,3 @@
-.github/workflows/docker-ci.yml
 name: Docker CI
 
 on:
@@ -14,7 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Show files
+        run: ls -la
+
       - name: Build Docker image
         run: docker build -t my-nginx-app .
-
-        
