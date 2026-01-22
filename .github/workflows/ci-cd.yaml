@@ -17,12 +17,12 @@ jobs:
       - name: Show files
         run: ls -la
 
-      - name: Check index.html exists
+      - name: Check hello.html exists
         run: |
-          if [ -f index.html ]; then
-            echo "index.html found "
+          if [ -f hello.html ]; then
+            echo "hello.html found "
           else
-            echo "index.html missing "
+            echo "hello.html missing "
             exit 1
           fi
 
@@ -34,3 +34,4 @@ jobs:
             echo "README missing "
             exit 1
           fi
+
