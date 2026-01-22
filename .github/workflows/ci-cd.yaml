@@ -1,0 +1,36 @@
+name: HTML Project Check
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show files
+        run: ls -la
+
+      - name: Check index.html exists
+        run: |
+          if [ -f index.html ]; then
+            echo "index.html found "
+          else
+            echo "index.html missing "
+            exit 1
+          fi
+
+      - name: Check README exists
+        run: |
+          if [ -f README.md ]; then
+            echo "README found "
+          else
+            echo "README missing "
+            exit 1
+          fi
